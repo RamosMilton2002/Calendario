@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         tv = findViewById(R.id.t1);
     }
 
-    public void AbreCalenadario(View view) {
+    public void AbreCalendario(View view) {
         Calendar cal = Calendar.getInstance();
         int anio = cal.get(Calendar.YEAR);
         int mes = cal.get(Calendar.MONTH);
@@ -30,9 +30,8 @@ public class MainActivity extends AppCompatActivity {
         DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String fecha = dayOfMonth + "/" + month + "/" + year ;
+                String fecha = dayOfMonth + "/" + (month + 1) + "/" + year ;
                 tv.setText(fecha);
-
             }
         }, dia, mes, anio);
         dpd.show();
